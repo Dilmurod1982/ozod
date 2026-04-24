@@ -25,3 +25,110 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(6, 182, 212, 0.8);
 }
+
+/* src/index.css - добавьте в конец файла */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.idle-warning {
+  animation:
+    slideIn 0.3s ease-out,
+    pulse 1s ease-in-out infinite;
+}
+
+/* src/index.css - добавьте в конец файла */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.5s ease-out;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* src/index.css - добавьте эти стили */
+.sidebar-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Стили для скролла в свернутом меню */
+.sidebar-collapsed::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-collapsed:hover::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Анимация для иконок при наведении */
+.sidebar-item {
+  transition: all 0.2s ease;
+}
+
+.sidebar-item:hover {
+  transform: translateX(4px);
+}
+
+.sidebar-collapsed .sidebar-item:hover {
+  transform: scale(1.1);
+}
+
+/* Плавное появление тултипа */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.group-hover\:opacity-100 {
+  animation: fadeIn 0.2s ease-out;
+}
